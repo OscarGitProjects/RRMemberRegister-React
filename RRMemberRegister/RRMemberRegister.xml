@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RRMemberRegister</name>
+    </assembly>
+    <members>
+        <member name="M:MemberRegisterAngular.Controllers.ControllerBaseController.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:MemberRegisterAngular.Controllers.MemberController.#ctor(MemberRegister.Services.IMemberRegisterService)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:MemberRegisterAngular.Controllers.MemberController.Get">
+            <summary>
+            GET: api/Member
+            Hämta alla medlemmar
+            </summary>
+            <returns>Ok och lista med alla medlemmar</returns>
+        </member>
+        <member name="M:MemberRegisterAngular.Controllers.MemberController.Get(System.Int32)">
+            <summary>
+            GET: api/Member/5
+            Hämtar sökt medlem
+            </summary>
+            <param name="id">id frö sökt medlem</param>
+            <returns>Ok och sökt medlem ellet NotFound</returns>
+        </member>
+        <member name="M:MemberRegisterAngular.Controllers.MemberController.Post(MemberRegister.Models.Member)">
+            <summary>
+            POST: api/Member
+            Skapar en ny medlem
+            </summary>
+            <param name="member">Information om nya medlemen</param>
+            <returns>Om det gick att skapa medlemen returneras medlemens id annars returneras -1</returns>
+        </member>
+        <member name="M:MemberRegisterAngular.Controllers.MemberController.Put(System.Int32,MemberRegister.Models.Member)">
+            <summary>
+            PUT: api/Member/5       
+            EDIT
+            Uppdaterar informationen om en medlem
+            </summary>
+            <param name="id">Id för den medlem som skall uppdateras</param>
+            <param name="member">Information om medlemen</param>
+            <returns>Om det gick att uppdatera information om medlemen returneras medlemens id annars returneras -1</returns>
+        </member>
+        <member name="M:MemberRegisterAngular.Controllers.MemberController.Delete(System.Int32)">
+            <summary>
+            DELETE: api/Member/5
+            Raderar en medlem
+            </summary>
+            <param name="id">id för den medlem som skall raderas</param>
+            <returns>Om det gick att uppdatera information om medlemen returneras medlemens id annars returneras -1</returns>
+        </member>
+        <member name="M:MemberRegister.Models.MemberRegisterContext.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:MemberRegister.Models.MemberRegisterContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{MemberRegister.Models.MemberRegisterContext})">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="options"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MemberRegister.Repository.IMemberRegisterRepository.GetMember(System.Int32)" -->
+        <member name="M:MemberRegister.Repository.IMemberRegisterRepository.GetMembers">
+            <summary>
+            Metoden returnerar alla medlemmar som finns i repository
+            </summary>
+            <returns>List med alla medlemmar i repository</returns>
+        </member>
+        <member name="M:MemberRegister.Repository.IMemberRegisterRepository.CreateMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden skapar en medlem i repository
+            </summary>
+            <param name="member">Objekt med infomation om den nya medlemen</param>
+            <returns>Objekt med medlemmens information uppdaterad med det id som medlemen fick i repository</returns>
+        </member>
+        <member name="M:MemberRegister.Repository.IMemberRegisterRepository.UpdateMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden uppdaterar information om en medlem i repository
+            </summary>
+            <param name="member">Objekt med information om medlemen</param>
+            <returns>Om uppdateringen gick bra returneras medlemens id från repository. Annars returneras ett negativt tal</returns>
+        </member>
+        <member name="M:MemberRegister.Repository.IMemberRegisterRepository.DeleteMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden raderar en medlem från repository
+            </summary>
+            <param name="member">Objekt med information om en medlem</param>
+            <returns>Om raderingen gick bra returneras medlemens id från repository. Annars returneras ett negativt tal</returns>
+        </member>
+        <member name="M:MemberRegister.Repository.IMemberRegisterRepository.DeleteMember(System.Int32)">
+            <summary>
+            Metoden raderar en medlem från repository
+            </summary>
+            <param name="id">Id för den medlem som skall raderas</param>
+            <returns>Om raderingen gick bra returneras medlemens id från repository. Annars returneras ett negativt tal</returns>
+        </member>
+        <member name="M:MemberRegister.Repository.IMemberRegisterRepository.DeleteAllMembers">
+            <summary>
+            Metoden returnerar alla medlemar i registret
+            </summary>
+            <returns>Om raderingen gick bra returneras ett positivt tal. Annars returneras ett negativt tal</returns>
+        </member>
+        <member name="T:MemberRegister.Repository.MemberRegisterRepository">
+            <summary>
+            Repository för member register
+            </summary>
+        </member>
+        <member name="M:MemberRegister.Repository.MemberRegisterRepository.#ctor(MemberRegister.Models.MemberRegisterContext)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="context">Referense till context</param>
+        </member>
+        <member name="M:MemberRegister.Repository.MemberRegisterRepository.CreateMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden skapar en medlem i repository
+            </summary>
+            <param name="member">Objekt med infomation om den nya medlemen</param>
+            <returns>Objekt med medlemmens information uppdaterad med det id som medlemen fick i repository.
+            Om det inte gick att spara returneras null</returns>
+            <exception cref="T:System.ArgumentNullException">Kastas om referensen till medlemen är null</exception>
+        </member>
+        <member name="M:MemberRegister.Repository.MemberRegisterRepository.DeleteAllMembers">
+            <summary>
+            Metoden returnerar alla medlemar i registret
+            </summary>
+            <returns>Om raderingen gick bra returneras ett positivt tal. Annars returneras ett negativt tal</returns>
+        </member>
+        <member name="M:MemberRegister.Repository.MemberRegisterRepository.DeleteMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden raderar en medlem från repository
+            </summary>
+            <param name="member">Objekt med information om en medlem</param>
+            <returns>Om raderingen gick bra returneras medlemens id från repository. Annars returneras ett negativt tal</returns>
+            <exception cref="T:System.ArgumentNullException">Kastas om referensen till medlemen är null</exception>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MemberRegister.Repository.MemberRegisterRepository.DeleteMember(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:MemberRegister.Repository.MemberRegisterRepository.GetMember(System.Int32)" -->
+        <member name="M:MemberRegister.Repository.MemberRegisterRepository.GetMembers">
+            <summary>
+            Metoden returnerar alla medlemar som finns i repository
+            </summary>
+            <returns>List med alla medlemmar i repository</returns>
+        </member>
+        <member name="M:MemberRegister.Repository.MemberRegisterRepository.UpdateMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden uppdaterar information om en medlem i repository
+            </summary>
+            <param name="member">Objekt med information om medlemen</param>
+            <returns>Om uppdateringen gick bra returneras medlemens id från repository. Annars returneras ett negativt tal</returns>
+            <exception cref="T:System.ArgumentNullException">Kastas om referensen till medlemen är null</exception>
+        </member>
+        <member name="M:MemberRegister.Services.IMemberRegisterService.GetMember(System.Int32)">
+            <summary>
+            Metoden returnerar medlem med id
+            </summary>
+            <param name="id">Id för sökt medlem</param>
+            <returns>Sökt medlem</returns>
+        </member>
+        <member name="M:MemberRegister.Services.IMemberRegisterService.GetMembers">
+            <summary>
+            Metoden returnerar alla medlemmar som finns i repository
+            </summary>
+            <returns>List med alla medlemmar i repository</returns>
+        </member>
+        <member name="M:MemberRegister.Services.IMemberRegisterService.CreateMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden skapar en medlem i repository
+            </summary>
+            <param name="member">Objekt med infomation om den nya medlemen</param>
+            <returns>Objekt med medlemmens information uppdaterad med det id som medlemen fick i repository</returns>
+        </member>
+        <member name="M:MemberRegister.Services.IMemberRegisterService.UpdateMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden uppdaterar information om en medlem i repository
+            </summary>
+            <param name="member">Objekt med information om medlemen</param>
+            <returns>Om uppdateringen gick bra returneras medlemens id från repository. Annars returneras ett negativt tal</returns>
+        </member>
+        <member name="M:MemberRegister.Services.IMemberRegisterService.DeleteMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden raderar en medlem från repository
+            </summary>
+            <param name="member">Objekt med information om en medlem</param>
+            <returns>Om raderingen gick bra returneras medlemens id från repository. Annars returneras ett negativt tal</returns>
+        </member>
+        <member name="M:MemberRegister.Services.IMemberRegisterService.DeleteMember(System.Int32)">
+            <summary>
+            Metoden raderar en medlem från repository
+            </summary>
+            <param name="id">Id för den medlem som skall raderas</param>
+            <returns>Om raderingen gick bra returneras medlemens id från repository. Annars returneras ett negativt tal</returns>
+        </member>
+        <member name="M:MemberRegister.Services.IMemberRegisterService.DeleteAllMembers">
+            <summary>
+            Metoden returnerar alla medlemar i registret
+            </summary>
+            <returns>Om raderingen gick bra returneras ett positivt tal. Annars returneras ett negativt tal</returns>
+        </member>
+        <member name="M:MemberRegister.Services.MemberRegisterService.#ctor(MemberRegister.Repository.IMemberRegisterRepository)">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:MemberRegister.Services.MemberRegisterService.CreateMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden skapar en medlem i repository
+            </summary>
+            <param name="member">Objekt med infomation om den nya medlemen</param>
+            <returns>Objekt med medlemmens information uppdaterad med det id som medlemen fick i repository.
+            Om det inte gick att spara returneras null</returns>
+            <exception cref="T:System.ArgumentNullException">Kastas om referensen till medlemen är null</exception>
+        </member>
+        <member name="M:MemberRegister.Services.MemberRegisterService.DeleteAllMembers">
+            <summary>
+            Metoden returnerar alla medlemar i registret
+            </summary>
+            <returns>Om raderingen gick bra returneras ett positivt tal. Annars returneras ett negativt tal</returns>
+        </member>
+        <member name="M:MemberRegister.Services.MemberRegisterService.DeleteMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden raderar en medlem från repository
+            </summary>
+            <param name="member">Objekt med information om en medlem</param>
+            <returns>Om raderingen gick bra returneras medlemens id från repository. Annars returneras ett negativt tal</returns>
+            <exception cref="T:System.ArgumentNullException">Kastas om referensen till medlemen är null</exception>
+        </member>
+        <member name="M:MemberRegister.Services.MemberRegisterService.DeleteMember(System.Int32)">
+            <summary>
+            Metoden raderar en medlem från repository
+            </summary>
+            <param name="id">Id för den medlem som skall raderas</param>
+            <returns>Om raderingen gick bra returneras medlemens id från repository. Annars returneras ett negativt tal</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MemberRegister.Services.MemberRegisterService.GetMember(System.Int32)" -->
+        <member name="M:MemberRegister.Services.MemberRegisterService.GetMembers">
+            <summary>
+            Metoden returnerar alla medlemmar som finns i repository
+            </summary>
+            <returns>List med alla medlemmar i repository</returns>
+        </member>
+        <member name="M:MemberRegister.Services.MemberRegisterService.UpdateMember(MemberRegister.Models.Member)">
+            <summary>
+            Metoden uppdaterar information om en medlem i repository
+            </summary>
+            <param name="member">Objekt med information om medlemen</param>
+            <returns>Om uppdateringen gick bra returneras medlemens id från repository. Annars returneras ett negativt tal</returns>
+            <exception cref="T:System.ArgumentNullException">Kastas om referensen till medlemen är null</exception>
+        </member>
+    </members>
+</doc>
